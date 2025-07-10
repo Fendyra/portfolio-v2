@@ -8,7 +8,7 @@ import image2 from "../assets/busyweeknds.png";
 import image3 from "../assets/portfolio-2025.png";
 import image4 from "../assets/volcanoria.png";
 import image5 from "../assets/elearnify.png";
-import image6 from "../assets/portfolio-v1.png";
+import image6 from "../assets/portfolio-V1.png";
 
 // Import logo teknologi
 import laravelLogo from "../assets/laravel.svg";
