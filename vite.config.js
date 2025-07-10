@@ -1,11 +1,12 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  base: "/PORTOFOLIO-WEB/",
+  // Hapus baris base: "/PORTOFOLIO-WEB/",
+  // atau ubah menjadi:
+  base: "/", // Ini menunjukkan aplikasi di-deploy di root
   build: {
-    outDir: 'build', 
+    outDir: "build",
   },
   plugins: [react()],
-})
+});
