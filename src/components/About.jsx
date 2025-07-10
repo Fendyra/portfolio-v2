@@ -1,4 +1,4 @@
-import { useState, useContext } from "react"; // Tambahkan useContext
+import { useState, useContext } from "react";
 import { motion } from "framer-motion";
 import {
   FaDownload,
@@ -18,12 +18,13 @@ import {
 } from "react-icons/fa";
 import { SiTailwindcss } from "react-icons/si";
 import profilePhoto from "../assets/foto-fe2.png";
-import { ThemeContext } from "../context/ThemeContext"; // Import ThemeContext
+import { ThemeContext } from "../context/ThemeContext";
 
-const cvFile = "/documents/CV_MUHAMMAD FARHAN NABIL.pdf";
+const cvFile =
+  "https://drive.google.com/drive/folders/18KZ0E2bgGptOEGsjfsy3iwFmtZYpdKaM?usp=sharing"; // PERUBAHAN: Tautan Google Drive
 
 function About() {
-  const { theme } = useContext(ThemeContext); // Gunakan theme dari context
+  const { theme } = useContext(ThemeContext);
   const [activeTab, setActiveTab] = useState("academic");
 
   const sectionVariants = {
@@ -73,14 +74,13 @@ function About() {
   return (
     <motion.section
       id="about"
-      className="relative py-20 lg:py-32 overflow-hidden" // HAPUS bg-black text-white
+      className="relative py-20 lg:py-32 overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
       variants={sectionVariants}
     >
-      {/* Background Gradient Overlay - Conditional for dark mode */}
-      {theme === "dark" && ( // TAMBAHKAN KONDISI INI
+      {theme === "dark" && (
         <div className="absolute inset-0 z-0 opacity-20">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
           <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
@@ -88,8 +88,7 @@ function About() {
         </div>
       )}
 
-      {/* Floating Tech Icons - Conditional for dark mode (opsional, bisa disesuaikan) */}
-      {theme === "dark" && ( // TAMBAHKAN KONDISI INI
+      {theme === "dark" && (
         <>
           {[
             { icon: FaHtml5, color: "text-orange-500", top: "10%", left: "5%" },
@@ -171,8 +170,6 @@ function About() {
                                 : "bg-gray-100/30 border-purple-300/50"
                             }`}
             >
-              {" "}
-              {/* SESUAIKAN BG & BORDER */}
               <motion.img
                 src={profilePhoto}
                 alt="Fendyra Restu Dewangga Profile"
@@ -192,7 +189,7 @@ function About() {
                 className={`px-6 py-3 rounded-full text-lg font-semibold transition-all duration-300 ${
                   activeTab === "academic"
                     ? "bg-purple-600 text-white shadow-lg"
-                    : "bg-gray-700 text-gray-300 hover:bg-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 text-gray-800 bg-gray-200 hover:bg-gray-300" // SESUAIKAN WARNA BUTTON
+                    : "bg-gray-700 text-gray-300 hover:bg-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 text-gray-800 bg-gray-200 hover:bg-gray-300"
                 }`}
                 onClick={() => setActiveTab("academic")}
                 whileHover={{ scale: 1.05 }}
@@ -204,7 +201,7 @@ function About() {
                 className={`px-6 py-3 rounded-full text-lg font-semibold transition-all duration-300 ${
                   activeTab === "organizational"
                     ? "bg-purple-600 text-white shadow-lg"
-                    : "bg-gray-700 text-gray-300 hover:bg-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 text-gray-800 bg-gray-200 hover:bg-gray-300" // SESUAIKAN WARNA BUTTON
+                    : "bg-gray-700 text-gray-300 hover:bg-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 text-gray-800 bg-gray-200 hover:bg-gray-300"
                 }`}
                 onClick={() => setActiveTab("organizational")}
                 whileHover={{ scale: 1.05 }}
@@ -216,7 +213,7 @@ function About() {
                 className={`px-6 py-3 rounded-full text-lg font-semibold transition-all duration-300 ${
                   activeTab === "skills"
                     ? "bg-purple-600 text-white shadow-lg"
-                    : "bg-gray-700 text-gray-300 hover:bg-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 text-gray-800 bg-gray-200 hover:bg-gray-300" // SESUAIKAN WARNA BUTTON
+                    : "bg-gray-700 text-gray-300 hover:bg-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 text-gray-800 bg-gray-200 hover:bg-gray-300"
                 }`}
                 onClick={() => setActiveTab("skills")}
                 whileHover={{ scale: 1.05 }}
@@ -236,20 +233,16 @@ function About() {
                             theme === "dark"
                               ? "bg-gray-800/50 border-gray-700"
                               : "bg-gray-50/50 border-gray-300"
-                          }`} // SESUAIKAN BG & BORDER
+                          }`}
             >
               {activeTab === "academic" && (
                 <div className="space-y-4">
-                  <p className="text-purple-700 dark:text-purple-300 flex items-center gap-3 mb-4 text-lg">
-                    {" "}
-                    {/* SESUAIKAN WARNA TEKS */}
+                  <p className="text-lg text-gray-300 flex items-center gap-3 mb-4">
                     <FaUniversity className="text-purple-400 text-2xl" />
                     Student at Universitas Pembangunan "Nasional" Veteran
                     Yogyakarta
                   </p>
-                  <p className="text-gray-700 dark:text-gray-300 text-justify leading-relaxed text-base">
-                    {" "}
-                    {/* SESUAIKAN WARNA TEKS */}
+                  <p className="text-base text-gray-300 text-justify leading-relaxed">
                     I’m a 5th-semester Information Systems student at
                     Universitas Pembangunan "Nasional" Veteran Yogyakarta with a
                     strong passion for front-end web development, User Interface
@@ -274,15 +267,11 @@ function About() {
               )}
               {activeTab === "organizational" && (
                 <div className="space-y-4">
-                  <p className="text-gray-700 dark:text-gray-300 flex items-center gap-3 text-lg">
-                    {" "}
-                    {/* SESUAIKAN WARNA TEKS */}
+                  <p className="text-lg text-gray-300 flex items-center gap-3">
                     <FaUsers className="text-pink-400 text-2xl" />
                     Active Member of HIMASISFO
                   </p>
-                  <p className="text-gray-700 dark:text-gray-300 flex items-center gap-3 text-lg">
-                    {" "}
-                    {/* SESUAIKAN WARNA TEKS */}
+                  <p className="text-lg text-gray-300 flex items-center gap-3">
                     <FaLightbulb className="text-yellow-400 text-2xl" />
                     Involved in various student organizations & committees
                   </p>
@@ -291,64 +280,32 @@ function About() {
               {activeTab === "skills" && (
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <motion.div
-                    className={`${
-                      theme === "dark" ? "bg-gray-700/70" : "bg-gray-200/70"
-                    } p-3 rounded-lg flex flex-col items-center justify-center gap-2`} // SESUAIKAN BG
-                    whileHover={{
-                      scale: 1.05,
-                      backgroundColor: theme === "dark" ? "#4a5568" : "#d1d5db",
-                    }}
+                    className="bg-gray-700/70 p-3 rounded-lg flex flex-col items-center justify-center gap-2"
+                    whileHover={{ scale: 1.05, backgroundColor: "#4a5568" }}
                   >
                     <FaTools className="text-green-400 text-3xl" />
-                    <span className="text-md font-medium text-gray-900 dark:text-white">
-                      Collaboration
-                    </span>{" "}
-                    {/* SESUAIKAN WARNA TEKS */}
+                    <span className="text-md font-medium">Collaboration</span>
                   </motion.div>
                   <motion.div
-                    className={`${
-                      theme === "dark" ? "bg-gray-700/70" : "bg-gray-200/70"
-                    } p-3 rounded-lg flex flex-col items-center justify-center gap-2`} // SESUAIKAN BG
-                    whileHover={{
-                      scale: 1.05,
-                      backgroundColor: theme === "dark" ? "#4a5568" : "#d1d5db",
-                    }}
+                    className="bg-gray-700/70 p-3 rounded-lg flex flex-col items-center justify-center gap-2"
+                    whileHover={{ scale: 1.05, backgroundColor: "#4a5568" }}
                   >
                     <FaCode className="text-blue-400 text-3xl" />
-                    <span className="text-md font-medium text-gray-900 dark:text-white">
-                      Coding
-                    </span>{" "}
-                    {/* SESUAIKAN WARNA TEKS */}
+                    <span className="text-md font-medium">Coding</span>
                   </motion.div>
                   <motion.div
-                    className={`${
-                      theme === "dark" ? "bg-gray-700/70" : "bg-gray-200/70"
-                    } p-3 rounded-lg flex flex-col items-center justify-center gap-2`} // SESUAIKAN BG
-                    whileHover={{
-                      scale: 1.05,
-                      backgroundColor: theme === "dark" ? "#4a5568" : "#d1d5db",
-                    }}
+                    className="bg-gray-700/70 p-3 rounded-lg flex flex-col items-center justify-center gap-2"
+                    whileHover={{ scale: 1.05, backgroundColor: "#4a5568" }}
                   >
                     <FaPaintBrush className="text-red-400 text-3xl" />
-                    <span className="text-md font-medium text-gray-900 dark:text-white">
-                      Design Thinking
-                    </span>{" "}
-                    {/* SESUAIKAN WARNA TEKS */}
+                    <span className="text-md font-medium">Design Thinking</span>
                   </motion.div>
                   <motion.div
-                    className={`${
-                      theme === "dark" ? "bg-gray-700/70" : "bg-gray-200/70"
-                    } p-3 rounded-lg flex flex-col items-center justify-center gap-2`} // SESUAIKAN BG
-                    whileHover={{
-                      scale: 1.05,
-                      backgroundColor: theme === "dark" ? "#4a5568" : "#d1d5db",
-                    }}
+                    className="bg-gray-700/70 p-3 rounded-lg flex flex-col items-center justify-center gap-2"
+                    whileHover={{ scale: 1.05, backgroundColor: "#4a5568" }}
                   >
                     <FaLightbulb className="text-yellow-400 text-3xl" />
-                    <span className="text-md font-medium text-gray-900 dark:text-white">
-                      Leadership
-                    </span>{" "}
-                    {/* SESUAIKAN WARNA TEKS */}
+                    <span className="text-md font-medium">Leadership</span>
                   </motion.div>
                 </div>
               )}
@@ -360,13 +317,13 @@ function About() {
             >
               <a
                 href={cvFile}
-                download="CV_MUHAMMAD_FARHAN_NABILA.pdf"
+                download="CV_MUHAMMAD_FARHAN_NABIL.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out group"
               >
                 <FaDownload className="mr-3 text-xl group-hover:animate-bounce-once" />
-                Download Resume
+                View Resume
               </a>
             </motion.div>
           </motion.div>
