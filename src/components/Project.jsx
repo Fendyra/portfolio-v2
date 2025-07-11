@@ -16,7 +16,7 @@ import tailwindLogo from "../assets/tailwindcss.png";
 import phpLogo from "../assets/php.png";
 import jsLogo from "../assets/js.png";
 import cssLogo from "../assets/css.png";
-import reactLogo from "../assets/atom.png";
+import reactLogo from "../assets/react.png";
 import figmaLogo from "../assets/figma.png";
 import nextLogo from "../assets/nextjs.png";
 import htmlLogo from "../assets/html-5.png";
