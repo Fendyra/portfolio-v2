@@ -18,6 +18,7 @@ import git from "../assets/git.png";
 import mysql from "../assets/mysql.png";
 import vercel from "../assets/vercel.png";
 import cplus from "../assets/cplus.png";
+import react from "../assets/react.png";
 
 const allSkills = [
   {
@@ -43,7 +44,7 @@ const allSkills = [
   },
   {
     name: "React",
-    image: nextjs,
+    image: react,
     color: "#61DAFB",
     category: "Frontend",
     confidence: 4,
